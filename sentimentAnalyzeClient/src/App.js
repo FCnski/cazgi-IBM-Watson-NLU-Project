@@ -50,7 +50,7 @@ class App extends React.Component {
         } else if (data === "negative"){
           output = <div style={{color:"red",fontSize:20}}>{data}</div>
         } else {
-          output = <div style={{color:"orange",fontSize:20}}>{data}</div>
+          output = <div style={{color:"yellow",fontSize:20}}>{data}</div>
         }
         this.setState({sentimentOutput:output});
       })});
@@ -73,9 +73,10 @@ class App extends React.Component {
   
 
   render() {
-    return (  
-      <div className="App">
-      <button className="btn btn-info" onClick={this.renderTextArea}>Text</button>
+    return (
+    <div className="App">
+        <title>Sentiment Analyzer</title>
+        <button className="btn btn-info" onClick={this.renderTextArea}>Text</button>
         <button className="btn btn-dark"  onClick={this.renderTextBox}>URL</button>
         <br/><br/>
         {this.state.innercomp}
@@ -84,7 +85,7 @@ class App extends React.Component {
         <button className="btn-primary" onClick={this.sendForEmotionAnalysis}>Analyze Emotion</button>
         <br/>
             {this.state.sentimentOutput}
-      </div>
+    </div>
     );
     }
 }
